@@ -1,2 +1,2 @@
 # Python-Compiler
-A compiler written in Python that supports C language instructions.
+A mini-language inspired by C written in Python.
