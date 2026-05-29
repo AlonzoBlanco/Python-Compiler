@@ -1,0 +1,51 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// examples/fibonacci.mini  —  Fibonacci, bucle for, do-while
+// ─────────────────────────────────────────────────────────────────────────────
+
+/* Fibonacci recursivo */
+func int fib(int n) {
+    if (n <= 1) { return n;
+}
+    return fib(n - 1) + fib(n - 2);
+}
+
+/* Suma iterativa usando bucle for */
+func int sum_to(int n) {
+    int s = 0;
+for (int i = 1; i <= n; i = i + 1) {
+        s = s + i;
+}
+    return s;
+}
+
+/* Pasos de Collatz usando do-while */
+func int collatz(int n) {
+    int steps = 0;
+do {
+        bool even = (n / 2) * 2 == n;
+if (even) {
+            n = n / 2;
+} else {
+            n = n * 3 + 1;
+}
+        steps = steps + 1;
+    } while (n != 1);
+    return steps;
+}
+
+func int main() {
+    // Primeros 10 números de Fibonacci
+    int i = 0;
+while (i < 10) {
+        print(fib(i));
+        i = i + 1;
+}
+
+    // Números triangulares 1..5
+    for (int k = 1; k <= 5; k = k + 1) {
+        print(sum_to(k));
+}
+
+    // Pasos de Collatz empezando desde 27
+    print(collatz(27));
+}
